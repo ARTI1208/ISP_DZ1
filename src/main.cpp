@@ -28,10 +28,6 @@ int main() {
         ifs.seekg(0, std::ios::beg);
         ifs.read(data, pos);
 
-        std::wcout.imbue(utf8_locale);
-
-        std::wcout << data ;
-
         const appChar* sortedByStart = sortByStart(data);
         const appChar* sortedByEnd = sortByEnd(data);
 

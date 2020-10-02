@@ -12,7 +12,7 @@
 template<typename Elem>
 static std::pair<int, int> quickSortPartitioner(std::vector<Elem>& data, int from, int to, const std::function<int(const Elem&, const Elem&)>& comparator) {
     int medium = (from + to) / 2;
-    Elem& pivot = data[medium];
+    Elem pivot = data[medium];
 
     int i = from;
     int j = to;
@@ -87,7 +87,7 @@ static appChar* splitAndSort(const appChar* data, const std::function<int(const 
     os << elems[elems.size() - 1];
 
     appString res = os.str();
-    appChar* sorted = new appChar[res.size()];
+    auto* sorted = new appChar[res.size()];
 
     os.str().copy(sorted, res.size());
 
@@ -108,20 +108,6 @@ const appChar* sortByStart(const appChar* data) {
             const appChar& secondChar = std::tolower(other[secondPos]);
 
             if (firstChar != secondChar) return firstChar < secondChar ? -1 : 1;
-
-//            if (firstChar != secondChar) {
-//                int res = firstChar < secondChar ? -1 : 1;
-//
-//                if (firstChar < secondChar) {
-//                    std::wcout << firstChar << " < " << secondChar << "\n";
-//                } else {
-//                    std::wcout << firstChar << " > " << secondChar << "\n";
-//                }
-//
-//                std::cout << str << " vs " << other << "; (" << firstChar << " vs " << secondChar << "); (" << (int) firstChar << " vs " <<  (int) secondChar << "); res = " << res << "\n";
-//
-//                return res;
-//            }
         }
 
         if (str.size() < other.size()) return -1;
