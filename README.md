@@ -1,6 +1,6 @@
 # ISP_DZ0
 
-Quadratic equation solver
+Onegin/Hamlet sorting. Sorts text file lines by the beginning (ignoring whitespaces and punctuation marks), then by the beginning of reversed lines (with same ignoring), then writes these results in out/res.txt alongside with original text.  
 
 ## Build && run
 On linux, you can build using CMake
@@ -9,7 +9,7 @@ On linux, you can build using CMake
     
 or by gcc 
     
-    g++ -Wall -Wextra -Wfloat-equal -o out/executable src/*.cpp
+    g++ -Wall -Wextra -o out/executable src/*.cpp
     
 and run generated executable
    
@@ -17,4 +17,4 @@ and run generated executable
 
    
 ## Documentation
-You can find documentation at https://arti1208.github.io/ISP_DZ0/html/
+You can find documentation at https://arti1208.github.io/ISP_DZ1/html/

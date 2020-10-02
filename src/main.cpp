@@ -31,12 +31,14 @@ int main() {
         const appChar* sortedByStart = sortByStart(data);
         const appChar* sortedByEnd = sortByEnd(data);
 
-        std::basic_ofstream<appChar> out("res.txt");
+        std::basic_ofstream<appChar> out("out/res.txt");
         out.imbue(utf8_locale);
 
 
         out << sortedByStart << "\n===================\n" << sortedByEnd << "\n===================\n" << data;
         out.close();
+
+        std::cout << "Done! You can find result in out/res.txt" << "\n";
     }
 
     return 0;
