@@ -3,7 +3,7 @@
 #include <vector>
 #include <codecvt>
 #include "app_common.h"
-#include "PoemSorter.h"
+#include "poem_sorter.h"
 
 int main() {
 
@@ -23,7 +23,7 @@ int main() {
         ifs.imbue(utf8_locale);
         auto pos = ifs.tellg();
 
-        appChar* data = new appChar[pos];
+        auto* data = new appChar[pos];
 
         ifs.seekg(0, std::ios::beg);
         ifs.read(data, pos);
@@ -38,9 +38,6 @@ int main() {
         out << sortedByStart << "\n===================\n" << sortedByEnd << "\n===================\n" << data;
         out.close();
     }
-
-    std::cout << isblank('\t') << "\n";
-
 
     return 0;
 }

@@ -7,61 +7,8 @@
 #include <iterator>
 #include <iostream>
 #include <functional>
-#include "PoemSorter.h"
-
-template<typename Elem>
-static std::pair<int, int> quickSortPartitioner(std::vector<Elem>& data, int from, int to, const std::function<int(const Elem&, const Elem&)>& comparator) {
-    int medium = (from + to) / 2;
-    Elem pivot = data[medium];
-
-    int i = from;
-    int j = to;
-
-    while (i <= j)
-    {
-
-        if (comparator(data[i], pivot) >= 0 && (comparator(data[j], pivot) <= 0))
-        {
-
-            std::swap(data[i], data[j]);
-            ++i;
-            --j;
-
-            if (i >= j) break;
-        }
-
-        while (comparator(data[i], pivot) < 0) {
-            ++i;
-        }
-
-        while (comparator(data[j], pivot) > 0) {
-            --j;
-        }
-    }
-
-    return {i, j};
-}
-
-template<typename Elem>
-static void quickSortImpl(std::vector<Elem>& data, int from, int to, const std::function<int(const Elem&, const Elem&)>& comparator) {
-    if (from < to) {
-        std::pair<int, int> p = quickSortPartitioner(data, from, to, comparator);
-
-        if (from < p.second) {
-            quickSortImpl(data, from, p.second, comparator);
-        }
-
-        if (p.first < to) {
-            quickSortImpl(data, p.first, to, comparator);
-        }
-    }
-}
-
-template<typename Elem>
-static void quickSort(std::vector<Elem>& data, const std::function<int(const Elem&, const Elem&)>& comparator) {
-    if (data.size() < 2) return;
-    quickSortImpl(data, 0, data.size() - 1, comparator);
-}
+#include "my_sorts.h"
+#include "poem_sorter.h"
 
 static bool shouldSkipChar(const appChar& c) {
     return ispunct(c) || isblank(c);
@@ -76,7 +23,7 @@ static appChar* splitAndSort(const appChar* data, const std::function<int(const 
         elems.push_back(std::move(item));
     }
 
-    quickSort(elems, comparator);
+    quick_sort::sort(elems, comparator);
 
     appOutStringStream os;
 
