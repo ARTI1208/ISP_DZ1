@@ -1,0 +1,56 @@
+\hypertarget{poem__sorter_8h}{}\doxysection{src/poem\+\_\+sorter.h File Reference}
+\label{poem__sorter_8h}\index{src/poem\_sorter.h@{src/poem\_sorter.h}}
+
+
+Functions to sort poems.  
+
+
+{\ttfamily \#include \char`\"{}app\+\_\+common.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}my\+\_\+sorts.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+const app\+Char $\ast$ \mbox{\hyperlink{poem__sorter_8h_ab2fb1e60f893875e31d4990dc70d7d16}{sort\+By\+Start}} (const app\+Char $\ast$data)
+\item 
+const app\+Char $\ast$ \mbox{\hyperlink{poem__sorter_8h_a34a6d42d5b1a1b4e5cb8fdb3dea48fce}{sort\+By\+End}} (const app\+Char $\ast$data)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Functions to sort poems. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{poem__sorter_8h_a34a6d42d5b1a1b4e5cb8fdb3dea48fce}\label{poem__sorter_8h_a34a6d42d5b1a1b4e5cb8fdb3dea48fce}} 
+\index{poem\_sorter.h@{poem\_sorter.h}!sortByEnd@{sortByEnd}}
+\index{sortByEnd@{sortByEnd}!poem\_sorter.h@{poem\_sorter.h}}
+\doxysubsubsection{\texorpdfstring{sortByEnd()}{sortByEnd()}}
+{\footnotesize\ttfamily const app\+Char$\ast$ sort\+By\+End (\begin{DoxyParamCaption}\item[{const app\+Char $\ast$}]{data }\end{DoxyParamCaption})}
+
+Sorts lines of c-\/style string by the beginning of each reversed line, ignoring whitespaces and punctuation marks
+
+
+\begin{DoxyParams}{Parameters}
+{\em data\mbox{[}in\mbox{]}} & C-\/style string the lines of which should be sorted\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+C-\/style string which is a set of sorted lines of original string 
+\end{DoxyReturn}
+\mbox{\Hypertarget{poem__sorter_8h_ab2fb1e60f893875e31d4990dc70d7d16}\label{poem__sorter_8h_ab2fb1e60f893875e31d4990dc70d7d16}} 
+\index{poem\_sorter.h@{poem\_sorter.h}!sortByStart@{sortByStart}}
+\index{sortByStart@{sortByStart}!poem\_sorter.h@{poem\_sorter.h}}
+\doxysubsubsection{\texorpdfstring{sortByStart()}{sortByStart()}}
+{\footnotesize\ttfamily const app\+Char$\ast$ sort\+By\+Start (\begin{DoxyParamCaption}\item[{const app\+Char $\ast$}]{data }\end{DoxyParamCaption})}
+
+Sorts lines of c-\/style string by the beginning of each line, ignoring whitespaces and punctuation marks
+
+
+\begin{DoxyParams}{Parameters}
+{\em data\mbox{[}in\mbox{]}} & C-\/style string the lines of which should be sorted\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+C-\/style string which is a set of sorted lines of original string 
+\end{DoxyReturn}

@@ -1,7 +1,3 @@
-//
-// Created by arti1208 on 02.10.2020.
-//
-
 #ifndef ISP_DZ2_APP_COMMON_H
 #define ISP_DZ2_APP_COMMON_H
 

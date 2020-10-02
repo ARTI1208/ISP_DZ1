@@ -1,0 +1,31 @@
+\hypertarget{classquick__sort}{}\doxysection{quick\+\_\+sort Class Reference}
+\label{classquick__sort}\index{quick\_sort@{quick\_sort}}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Elem $>$ }\\static void \mbox{\hyperlink{classquick__sort_a7875ca82d3efe85a1cda07e48c82503e}{sort}} (std\+::vector$<$ Elem $>$ \&data, const std\+::function$<$ int(const Elem \&, const Elem \&)$>$ \&comparator)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classquick__sort_a7875ca82d3efe85a1cda07e48c82503e}\label{classquick__sort_a7875ca82d3efe85a1cda07e48c82503e}} 
+\index{quick\_sort@{quick\_sort}!sort@{sort}}
+\index{sort@{sort}!quick\_sort@{quick\_sort}}
+\doxysubsubsection{\texorpdfstring{sort()}{sort()}}
+{\footnotesize\ttfamily template$<$typename Elem $>$ \\
+static void quick\+\_\+sort\+::sort (\begin{DoxyParamCaption}\item[{std\+::vector$<$ Elem $>$ \&}]{data,  }\item[{const std\+::function$<$ int(const Elem \&, const Elem \&)$>$ \&}]{comparator }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Sorts given vector in-\/place using the provided comparator to determine the relationship between objects
+
+
+\begin{DoxyParams}{Parameters}
+{\em data\mbox{[}in,out\mbox{]}} & Vector to sort \\
+\hline
+{\em comparator\mbox{[}in\mbox{]}} & Function that compare vector elements. Should return negative value if first element is less than second, zero if they are equal and positive value if the second argument is greater \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{my__sorts_8h}{my\+\_\+sorts.\+h}}\end{DoxyCompactItemize}
