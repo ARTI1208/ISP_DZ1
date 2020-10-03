@@ -7,13 +7,13 @@ On linux, you can build using CMake
     
     cmake -S ./ -B out && cmake --build out
     
-or by gcc 
-    
-    g++ -Wall -Wextra -o out/executable src/*.cpp
-    
-and run generated executable
+Run generated executable
    
     out/executable 
+
+Run unit tests
+   
+    out/tests    
 
    
 ## Documentation
