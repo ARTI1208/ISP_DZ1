@@ -11,7 +11,7 @@
 #include "my_sorts.h"
 
 /**
- * Sorts lines of c-style string by the beginning of each line, ignoring whitespaces and punctuation marks
+ * Sorts lines of c-style string by the beginning of each line, ignoring whitespaces, punctuation marks and case
  *
  * @param data[in] C-style string the lines of which should be sorted
  *
@@ -20,7 +20,7 @@
 const appChar* sortByStart(const appChar* data);
 
 /**
- * Sorts lines of c-style string by the beginning of each reversed line, ignoring whitespaces and punctuation marks
+ * Sorts lines of c-style string by the beginning of each reversed line, ignoring whitespaces, punctuation marks and case
  *
  * @param data[in] C-style string the lines of which should be sorted
  *
