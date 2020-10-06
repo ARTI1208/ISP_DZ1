@@ -26,7 +26,9 @@ void sortByStart(std::vector<LineData>& data) {
             const appChar& firstChar = std::tolower(str[firstPos]);
             const appChar& secondChar = std::tolower(other[secondPos]);
 
-            if (firstChar != secondChar) return firstChar < secondChar ? -1 : 1;
+            if (firstChar != secondChar) {
+                return ((firstChar < secondChar) && !shouldSkipChar(secondChar)) || shouldSkipChar(firstChar) ? -1 : 1;
+            }
         }
 
         if (str.size() < other.size()) return -1;
@@ -53,7 +55,9 @@ void sortByEnd(std::vector<LineData>& data) {
             const appChar& firstChar = std::tolower(str[firstPos]);
             const appChar& secondChar = std::tolower(other[secondPos]);
 
-            if (firstChar != secondChar) return firstChar < secondChar ? -1 : 1;
+            if (firstChar != secondChar) {
+                return ((firstChar < secondChar) && !shouldSkipChar(secondChar)) || shouldSkipChar(firstChar) ? -1 : 1;
+            }
         }
 
         if (str.size() < other.size()) return -1;
