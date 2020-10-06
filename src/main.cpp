@@ -29,8 +29,6 @@ int main(int argc, char* argv[]) {
     size_t fileContentSize = 0;
     const std::locale utf8_locale = std::locale(std::locale(), new std::codecvt_utf8<wchar_t>());
 
-    std::chrono::steady_clock::time_point sortingStart = std::chrono::steady_clock::now();
-
     if (argc > 1) {
         data = read(argv[1], fileContentSize);
     } else {
@@ -72,9 +70,6 @@ int main(int argc, char* argv[]) {
 
         fclose(outFile);
         munmap(data, fileContentSize);
-
-        std::chrono::steady_clock::time_point sortingEnd = std::chrono::steady_clock::now();
-        std::cout << std::chrono::duration_cast<std::chrono::nanoseconds>(sortingEnd - sortingStart).count() << "ns\n";
 
         std::cout << "Done! You can find result in out/res.txt" << "\n";
     }
