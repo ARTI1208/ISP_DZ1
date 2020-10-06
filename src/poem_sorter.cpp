@@ -16,12 +16,12 @@ void sortByStart(std::vector<LineData>& data) {
     std::function<int(const LineData&, const LineData&)> comparator = [](const LineData& str, const LineData& other) {
 
         size_t firstPos = 0;
-        for (; firstPos < str.size() && shouldSkipChar(str[firstPos]); ++firstPos);
+        for (; firstPos < str.length() && shouldSkipChar(str[firstPos]); ++firstPos);
 
         size_t secondPos = 0;
-        for (; secondPos < other.size() && shouldSkipChar(other[secondPos]); ++secondPos);
+        for (; secondPos < other.length() && shouldSkipChar(other[secondPos]); ++secondPos);
 
-        for (; firstPos < str.size() && secondPos < other.size(); ++firstPos, ++secondPos) {
+        for (; firstPos < str.length() && secondPos < other.length(); ++firstPos, ++secondPos) {
 
             const appChar& firstChar = std::tolower(str[firstPos]);
             const appChar& secondChar = std::tolower(other[secondPos]);
@@ -31,8 +31,8 @@ void sortByStart(std::vector<LineData>& data) {
             }
         }
 
-        if (str.size() < other.size()) return -1;
-        else if (str.size() == other.size()) return 0;
+        if (str.length() < other.length()) return -1;
+        else if (str.length() == other.length()) return 0;
         else return 1;
     };
 
@@ -44,10 +44,10 @@ void sortByEnd(std::vector<LineData>& data) {
         if (str.empty()) return other.empty() ? 0 : -1;
         if (other.empty()) return 1;
 
-        ssize_t firstPos = str.size() - 1;
+        ssize_t firstPos = str.length() - 1;
         for (; firstPos >= 0 && shouldSkipChar(str[firstPos]); --firstPos);
 
-        ssize_t secondPos = other.size() - 1;
+        ssize_t secondPos = other.length() - 1;
         for (; secondPos >= 0 && shouldSkipChar(other[secondPos]); --secondPos);
 
         for (; firstPos >= 0 && secondPos >= 0; --firstPos, --secondPos) {
@@ -60,8 +60,8 @@ void sortByEnd(std::vector<LineData>& data) {
             }
         }
 
-        if (str.size() < other.size()) return -1;
-        else if (str.size() == other.size()) return 0;
+        if (str.length() < other.length()) return -1;
+        else if (str.length() == other.length()) return 0;
         else return 1;
     };
 
@@ -71,6 +71,9 @@ void sortByEnd(std::vector<LineData>& data) {
 void fromCString(const appChar* str, size_t strLen, std::vector<LineData>& data) {
     for (size_t i = 0, start = 0; i < strLen; ++i) {
         if (str[i] == '\n') {
+
+            Line
+
             data.emplace_back(str + start, str + i);
 
             start = i + 1;

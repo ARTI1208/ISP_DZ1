@@ -7,12 +7,19 @@ Functions to sort poems.
 
 {\ttfamily \#include \char`\"{}app\+\_\+common.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}my\+\_\+sorts.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structLineData}{Line\+Data}}
+\end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-const app\+Char $\ast$ \mbox{\hyperlink{poem__sorter_8h_ab2fb1e60f893875e31d4990dc70d7d16}{sort\+By\+Start}} (const app\+Char $\ast$data)
+void \mbox{\hyperlink{poem__sorter_8h_a06e8d6d8789b8ea67ddd7c23a67acf12}{sort\+By\+Start}} (std\+::vector$<$ \mbox{\hyperlink{structLineData}{Line\+Data}} $>$ \&data)
 \item 
-const app\+Char $\ast$ \mbox{\hyperlink{poem__sorter_8h_a34a6d42d5b1a1b4e5cb8fdb3dea48fce}{sort\+By\+End}} (const app\+Char $\ast$data)
+void \mbox{\hyperlink{poem__sorter_8h_a05aa4908551441b6b26a50de308c2e9f}{sort\+By\+End}} (std\+::vector$<$ \mbox{\hyperlink{structLineData}{Line\+Data}} $>$ \&data)
+\item 
+void \mbox{\hyperlink{poem__sorter_8h_ac975ff6420860ee734d7c16349fba1b7}{from\+C\+String}} (const app\+Char $\ast$str, size\+\_\+t str\+Len, std\+::vector$<$ \mbox{\hyperlink{structLineData}{Line\+Data}} $>$ \&data)
 \end{DoxyCompactItemize}
 
 
@@ -22,35 +29,50 @@ Functions to sort poems.
 
 
 \doxysubsection{Function Documentation}
-\mbox{\Hypertarget{poem__sorter_8h_a34a6d42d5b1a1b4e5cb8fdb3dea48fce}\label{poem__sorter_8h_a34a6d42d5b1a1b4e5cb8fdb3dea48fce}} 
+\mbox{\Hypertarget{poem__sorter_8h_ac975ff6420860ee734d7c16349fba1b7}\label{poem__sorter_8h_ac975ff6420860ee734d7c16349fba1b7}} 
+\index{poem\_sorter.h@{poem\_sorter.h}!fromCString@{fromCString}}
+\index{fromCString@{fromCString}!poem\_sorter.h@{poem\_sorter.h}}
+\doxysubsubsection{\texorpdfstring{fromCString()}{fromCString()}}
+{\footnotesize\ttfamily void from\+C\+String (\begin{DoxyParamCaption}\item[{const app\+Char $\ast$}]{str,  }\item[{size\+\_\+t}]{str\+Len,  }\item[{std\+::vector$<$ \mbox{\hyperlink{structLineData}{Line\+Data}} $>$ \&}]{data }\end{DoxyParamCaption})}
+
+Converts c-\/style string into vector of \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{structLineData}{Line\+Data}} instances
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em app\+Char\mbox{[}in\mbox{]}} & C-\/style string that should be converted to \mbox{\hyperlink{structLineData}{Line\+Data}} vector \\
+\hline
+{\em str\+Len} & Length of the given string \\
+\hline
+{\em data\mbox{[}out\mbox{]}} & Vector in which instances of \mbox{\hyperlink{structLineData}{Line\+Data}} would be placed\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+C-\/style string which is a set of sorted lines of original string 
+\end{DoxyReturn}
+\mbox{\Hypertarget{poem__sorter_8h_a05aa4908551441b6b26a50de308c2e9f}\label{poem__sorter_8h_a05aa4908551441b6b26a50de308c2e9f}} 
 \index{poem\_sorter.h@{poem\_sorter.h}!sortByEnd@{sortByEnd}}
 \index{sortByEnd@{sortByEnd}!poem\_sorter.h@{poem\_sorter.h}}
 \doxysubsubsection{\texorpdfstring{sortByEnd()}{sortByEnd()}}
-{\footnotesize\ttfamily const app\+Char$\ast$ sort\+By\+End (\begin{DoxyParamCaption}\item[{const app\+Char $\ast$}]{data }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void sort\+By\+End (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{structLineData}{Line\+Data}} $>$ \&}]{data }\end{DoxyParamCaption})}
 
-Sorts lines of c-\/style string by the beginning of each reversed line, ignoring whitespaces and punctuation marks
+Sorts lines (represented by instances of \mbox{\hyperlink{structLineData}{Line\+Data}}) of text by the beginning of each reversed line, ignoring whitespaces, punctuation marks and case
 
 
 \begin{DoxyParams}{Parameters}
-{\em data\mbox{[}in\mbox{]}} & C-\/style string the lines of which should be sorted\\
+{\em data\mbox{[}in,out\mbox{]}} & Vector that contains lines to be sorted \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-C-\/style string which is a set of sorted lines of original string 
-\end{DoxyReturn}
-\mbox{\Hypertarget{poem__sorter_8h_ab2fb1e60f893875e31d4990dc70d7d16}\label{poem__sorter_8h_ab2fb1e60f893875e31d4990dc70d7d16}} 
+\mbox{\Hypertarget{poem__sorter_8h_a06e8d6d8789b8ea67ddd7c23a67acf12}\label{poem__sorter_8h_a06e8d6d8789b8ea67ddd7c23a67acf12}} 
 \index{poem\_sorter.h@{poem\_sorter.h}!sortByStart@{sortByStart}}
 \index{sortByStart@{sortByStart}!poem\_sorter.h@{poem\_sorter.h}}
 \doxysubsubsection{\texorpdfstring{sortByStart()}{sortByStart()}}
-{\footnotesize\ttfamily const app\+Char$\ast$ sort\+By\+Start (\begin{DoxyParamCaption}\item[{const app\+Char $\ast$}]{data }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void sort\+By\+Start (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{structLineData}{Line\+Data}} $>$ \&}]{data }\end{DoxyParamCaption})}
 
-Sorts lines of c-\/style string by the beginning of each line, ignoring whitespaces and punctuation marks
+Sorts lines (represented by instances of \mbox{\hyperlink{structLineData}{Line\+Data}}) of text by the beginning of each line, ignoring whitespaces, punctuation marks and case
 
 
 \begin{DoxyParams}{Parameters}
-{\em data\mbox{[}in\mbox{]}} & C-\/style string the lines of which should be sorted\\
+{\em data\mbox{[}in,out\mbox{]}} & Vector that contains lines to be sorted \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-C-\/style string which is a set of sorted lines of original string 
-\end{DoxyReturn}

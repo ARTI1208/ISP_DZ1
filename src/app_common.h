@@ -7,8 +7,6 @@
 //was playing with char and wchar
 typedef char appChar;
 typedef std::basic_string<appChar> appString;
-typedef std::basic_stringstream<appChar> appStringStream;
-typedef std::basic_ostringstream<appChar> appOutStringStream;
 
 
 #endif //ISP_DZ2_APP_COMMON_H

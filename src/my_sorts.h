@@ -38,28 +38,7 @@ private:
                 ++i;
                 --j;
             }
-
-//            if (comparator(data[i], pivot) >= 0 && (comparator(data[j], pivot) <= 0)) {
-//
-//                std::swap(data[i], data[j]);
-//                ++i;
-//                --j;
-//
-//                if (i >= j) break;
-//            }
-//
-//            while (comparator(data[i], pivot) < 0) {
-//                ++i;
-//            }
-//
-//            while (comparator(data[j], pivot) > 0) {
-//                --j;
-//            }
         }
-
-//        if (j + 2 < i) {
-//            std::cout << i << " vs " << j << "\n";
-//        }
 
         return i;
     }

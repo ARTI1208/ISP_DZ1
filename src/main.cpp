@@ -12,14 +12,13 @@ appChar* read(const char* path, size_t& size) {
     int descriptor = open(path, O_RDONLY);
 
     struct stat fileStat{};
-
     if (fstat(descriptor, &fileStat) == -1) return nullptr;
 
     auto* data = (appChar*) mmap(nullptr, fileStat.st_size, PROT_READ, MAP_PRIVATE, descriptor, 0);
-
     if (data == MAP_FAILED) return nullptr;
 
     close(descriptor);
+
     size = fileStat.st_size;
 
     return data;
@@ -56,7 +55,7 @@ int main(int argc, char* argv[]) {
 
         fprintf(outFile, "===================Sorted by start\n");
         for (auto& line : lines) {
-            fwrite(line.start, sizeof(appChar), line.size() + 1, outFile);
+            fwrite(line.start, sizeof(appChar), line.length() + 1, outFile);
         }
 
 
@@ -64,7 +63,7 @@ int main(int argc, char* argv[]) {
 
         fprintf(outFile, "===================Sorted by end\n");
         for (auto& line : lines) {
-            fwrite(line.start, sizeof(appChar), line.size() + 1, outFile);
+            fwrite(line.start, sizeof(appChar), line.length() + 1, outFile);
         }
 
 

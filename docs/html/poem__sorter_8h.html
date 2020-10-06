@@ -67,6 +67,7 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">poem_sorter.h File Reference</div>  </div>
@@ -80,35 +81,60 @@ $(function() {
 </div>
 <p><a href="poem__sorter_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structLineData.html">LineData</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ab2fb1e60f893875e31d4990dc70d7d16"><td class="memItemLeft" align="right" valign="top">const appChar *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="poem__sorter_8h.html#ab2fb1e60f893875e31d4990dc70d7d16">sortByStart</a> (const appChar *data)</td></tr>
-<tr class="separator:ab2fb1e60f893875e31d4990dc70d7d16"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a34a6d42d5b1a1b4e5cb8fdb3dea48fce"><td class="memItemLeft" align="right" valign="top">const appChar *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="poem__sorter_8h.html#a34a6d42d5b1a1b4e5cb8fdb3dea48fce">sortByEnd</a> (const appChar *data)</td></tr>
-<tr class="separator:a34a6d42d5b1a1b4e5cb8fdb3dea48fce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06e8d6d8789b8ea67ddd7c23a67acf12"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="poem__sorter_8h.html#a06e8d6d8789b8ea67ddd7c23a67acf12">sortByStart</a> (std::vector&lt; <a class="el" href="structLineData.html">LineData</a> &gt; &amp;data)</td></tr>
+<tr class="separator:a06e8d6d8789b8ea67ddd7c23a67acf12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05aa4908551441b6b26a50de308c2e9f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="poem__sorter_8h.html#a05aa4908551441b6b26a50de308c2e9f">sortByEnd</a> (std::vector&lt; <a class="el" href="structLineData.html">LineData</a> &gt; &amp;data)</td></tr>
+<tr class="separator:a05aa4908551441b6b26a50de308c2e9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac975ff6420860ee734d7c16349fba1b7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="poem__sorter_8h.html#ac975ff6420860ee734d7c16349fba1b7">fromCString</a> (const appChar *str, size_t strLen, std::vector&lt; <a class="el" href="structLineData.html">LineData</a> &gt; &amp;data)</td></tr>
+<tr class="separator:ac975ff6420860ee734d7c16349fba1b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Functions to sort poems. </p>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="a34a6d42d5b1a1b4e5cb8fdb3dea48fce"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a34a6d42d5b1a1b4e5cb8fdb3dea48fce">&#9670;&nbsp;</a></span>sortByEnd()</h2>
+<a id="ac975ff6420860ee734d7c16349fba1b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac975ff6420860ee734d7c16349fba1b7">&#9670;&nbsp;</a></span>fromCString()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const appChar* sortByEnd </td>
+          <td class="memname">void fromCString </td>
           <td>(</td>
           <td class="paramtype">const appChar *&#160;</td>
-          <td class="paramname"><em>data</em></td><td>)</td>
+          <td class="paramname"><em>str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>strLen</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="structLineData.html">LineData</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Sorts lines of c-style string by the beginning of each reversed line, ignoring whitespaces and punctuation marks</p>
+<p>Converts c-style string into vector of </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="structLineData.html">LineData</a> instances</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">data[in]</td><td>C-style string the lines of which should be sorted</td></tr>
+    <tr><td class="paramname">appChar[in]</td><td>C-style string that should be converted to <a class="el" href="structLineData.html">LineData</a> vector </td></tr>
+    <tr><td class="paramname">strLen</td><td>Length of the given string </td></tr>
+    <tr><td class="paramname">data[out]</td><td>Vector in which instances of <a class="el" href="structLineData.html">LineData</a> would be placed</td></tr>
   </table>
   </dd>
 </dl>
@@ -116,29 +142,53 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ab2fb1e60f893875e31d4990dc70d7d16"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab2fb1e60f893875e31d4990dc70d7d16">&#9670;&nbsp;</a></span>sortByStart()</h2>
+<a id="a05aa4908551441b6b26a50de308c2e9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05aa4908551441b6b26a50de308c2e9f">&#9670;&nbsp;</a></span>sortByEnd()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const appChar* sortByStart </td>
+          <td class="memname">void sortByEnd </td>
           <td>(</td>
-          <td class="paramtype">const appChar *&#160;</td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="structLineData.html">LineData</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>data</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Sorts lines of c-style string by the beginning of each line, ignoring whitespaces and punctuation marks</p>
+<p>Sorts lines (represented by instances of <a class="el" href="structLineData.html">LineData</a>) of text by the beginning of each reversed line, ignoring whitespaces, punctuation marks and case</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">data[in]</td><td>C-style string the lines of which should be sorted</td></tr>
+    <tr><td class="paramname">data[in,out]</td><td>Vector that contains lines to be sorted </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>C-style string which is a set of sorted lines of original string </dd></dl>
+
+</div>
+</div>
+<a id="a06e8d6d8789b8ea67ddd7c23a67acf12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06e8d6d8789b8ea67ddd7c23a67acf12">&#9670;&nbsp;</a></span>sortByStart()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void sortByStart </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="structLineData.html">LineData</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>data</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Sorts lines (represented by instances of <a class="el" href="structLineData.html">LineData</a>) of text by the beginning of each line, ignoring whitespaces, punctuation marks and case</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data[in,out]</td><td>Vector that contains lines to be sorted </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
