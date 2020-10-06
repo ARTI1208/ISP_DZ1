@@ -3,7 +3,7 @@ project(ISP_DZ2)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(tests main.cpp)
+add_executable(tests main.cpp ../src/app_common.h ../src/my_sorts.h ../src/poem_sorter.h ../src/poem_sorter.cpp)
 
 target_compile_options(tests PRIVATE -Wall -Wextra)
 
@@ -40,4 +40,5 @@ endif()
 
 # Now simply link against gtest or gtest_main as needed. Eg
 target_link_libraries(tests gtest_main)
-add_test(NAME SimpleTest COMMAND tests)
+
+add_dependencies(tests executable)

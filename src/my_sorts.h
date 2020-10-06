@@ -9,54 +9,105 @@
 
 #include <vector>
 #include <functional>
+#include <iostream>
 
 class quick_sort {
 
 private:
     template<typename Elem>
-    static std::pair<int, int> quickSortPartitioner(std::vector<Elem>& data, int from, int to,
+    static size_t quickSortPartitioner(std::vector<Elem>& data, size_t from, size_t to,
                                                     const std::function<int(const Elem&, const Elem&)>& comparator) {
-        int medium = (from + to) / 2;
+        size_t medium = (from + to) / 2;
         Elem pivot = data[medium];
 
-        int i = from;
-        int j = to;
+        size_t i = from;
+        size_t j = to;
 
         while (i <= j) {
 
-            if (comparator(data[i], pivot) >= 0 && (comparator(data[j], pivot) <= 0)) {
+            while (i <= j && comparator(data[i], pivot) < 0) {
+                ++i;
+            }
 
+            while (i <= j && comparator(data[j], pivot) > 0) {
+                --j;
+            }
+
+            if (i <= j) {
                 std::swap(data[i], data[j]);
                 ++i;
                 --j;
-
-                if (i >= j) break;
             }
 
-            while (comparator(data[i], pivot) < 0) {
-                ++i;
-            }
-
-            while (comparator(data[j], pivot) > 0) {
-                --j;
-            }
+//            if (comparator(data[i], pivot) >= 0 && (comparator(data[j], pivot) <= 0)) {
+//
+//                std::swap(data[i], data[j]);
+//                ++i;
+//                --j;
+//
+//                if (i >= j) break;
+//            }
+//
+//            while (comparator(data[i], pivot) < 0) {
+//                ++i;
+//            }
+//
+//            while (comparator(data[j], pivot) > 0) {
+//                --j;
+//            }
         }
 
-        return {i, j};
+//        if (j + 2 < i) {
+//            std::cout << i << " vs " << j << "\n";
+//        }
+
+        return i;
     }
 
     template<typename Elem>
-    static void quickSortImpl(std::vector<Elem>& data, int from, int to,
+    static void sort2elems(Elem& firstElem, Elem& secondElem,
+                           const std::function<int(const Elem&, const Elem&)>& comparator) {
+        if (comparator(firstElem, secondElem) > 0) {
+            std::swap(firstElem, secondElem);
+        }
+    }
+
+    template<typename Elem>
+    static void sort3elems(Elem& firstElem, Elem& secondElem, Elem& thirdElem,
+                           const std::function<int(const Elem&, const Elem&)>& comparator) {
+        if (comparator(firstElem, secondElem) > 0) {
+            std::swap(firstElem, secondElem);
+        }
+        if (comparator(secondElem, thirdElem) > 0) {
+            std::swap(secondElem, thirdElem);
+        }
+        if (comparator(firstElem, secondElem) > 0) {
+            std::swap(firstElem, secondElem);
+        }
+    }
+
+    template<typename Elem>
+    static void quickSortImpl(std::vector<Elem>& data, size_t from, size_t to,
                        const std::function<int(const Elem&, const Elem&)>& comparator) {
         if (from < to) {
-            std::pair<int, int> p = quickSortPartitioner(data, from, to, comparator);
 
-            if (from < p.second) {
-                quickSortImpl(data, from, p.second, comparator);
+            switch (to - from) {
+                case 1:
+                    sort2elems(data[from], data[to], comparator);
+                    return;
+                case 2:
+                    sort3elems(data[from], data[from + 1], data[from + 2], comparator);
+                    return;
             }
 
-            if (p.first < to) {
-                quickSortImpl(data, p.first, to, comparator);
+            size_t p = quickSortPartitioner(data, from, to, comparator);
+
+            if (from + 1 < p) {
+                quickSortImpl(data, from, p - 1, comparator);
+            }
+
+            if (p < to) {
+                quickSortImpl(data, p, to, comparator);
             }
         }
     }
