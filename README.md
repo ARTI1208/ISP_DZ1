@@ -7,13 +7,13 @@ On linux, you can build using CMake
     
     cmake -S ./ -B out && cmake --build out
     
-Run generated executable
+Run generated executable (filepath is optional argument)
    
-    out/executable 
+    out/executable [filepath]
 
 Run unit tests
    
-    out/tests    
+    out/tests
 
    
 ## Documentation
