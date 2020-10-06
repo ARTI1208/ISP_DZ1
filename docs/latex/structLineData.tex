@@ -1,0 +1,116 @@
+\hypertarget{structLineData}{}\doxysection{Line\+Data Struct Reference}
+\label{structLineData}\index{LineData@{LineData}}
+
+
+{\ttfamily \#include $<$poem\+\_\+sorter.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structLineData_a1734968dd26f2feea328c84ec6e726ba}{Line\+Data}} (const app\+Char $\ast$\mbox{\hyperlink{structLineData_adb5973414b906e1573308de60a4519cb}{start}}, const app\+Char $\ast$\mbox{\hyperlink{structLineData_a6a7cb3638ea1096e923684e6cb8987f0}{end}})
+\item 
+size\+\_\+t \mbox{\hyperlink{structLineData_a8ebc1c1ddd7e3f3fbb77171e0f33dae7}{length}} () const
+\item 
+bool \mbox{\hyperlink{structLineData_abeb317c475acf41ab909d2bc11123ac2}{empty}} () const
+\item 
+const app\+Char \& \mbox{\hyperlink{structLineData_ad80505a7ef9baa083bd78ed05f0704da}{operator\mbox{[}$\,$\mbox{]}}} (size\+\_\+t pos) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const app\+Char $\ast$ \mbox{\hyperlink{structLineData_adb5973414b906e1573308de60a4519cb}{start}}
+\item 
+const app\+Char $\ast$ \mbox{\hyperlink{structLineData_a6a7cb3638ea1096e923684e6cb8987f0}{end}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Structure that represents a line of text 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structLineData_a1734968dd26f2feea328c84ec6e726ba}\label{structLineData_a1734968dd26f2feea328c84ec6e726ba}} 
+\index{LineData@{LineData}!LineData@{LineData}}
+\index{LineData@{LineData}!LineData@{LineData}}
+\doxysubsubsection{\texorpdfstring{LineData()}{LineData()}}
+{\footnotesize\ttfamily Line\+Data\+::\+Line\+Data (\begin{DoxyParamCaption}\item[{const app\+Char $\ast$}]{start,  }\item[{const app\+Char $\ast$}]{end }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructs th structure with given parameters
+
+
+\begin{DoxyParams}{Parameters}
+{\em start} & Pointer to the beginning of line \\
+\hline
+{\em end} & Pointer to the end of line\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em invalid\+\_\+argument} & if either start or end is nullptr, or if end is less than start \\
+\hline
+\end{DoxyExceptions}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structLineData_abeb317c475acf41ab909d2bc11123ac2}\label{structLineData_abeb317c475acf41ab909d2bc11123ac2}} 
+\index{LineData@{LineData}!empty@{empty}}
+\index{empty@{empty}!LineData@{LineData}}
+\doxysubsubsection{\texorpdfstring{empty()}{empty()}}
+{\footnotesize\ttfamily bool Line\+Data\+::empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns whether this line should be treated as empty or not
+
+\begin{DoxyReturn}{Returns}
+true if this line should be treated as empty, false otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structLineData_a8ebc1c1ddd7e3f3fbb77171e0f33dae7}\label{structLineData_a8ebc1c1ddd7e3f3fbb77171e0f33dae7}} 
+\index{LineData@{LineData}!length@{length}}
+\index{length@{length}!LineData@{LineData}}
+\doxysubsubsection{\texorpdfstring{length()}{length()}}
+{\footnotesize\ttfamily size\+\_\+t Line\+Data\+::length (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the length of the line
+
+\begin{DoxyReturn}{Returns}
+The length of the line 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structLineData_ad80505a7ef9baa083bd78ed05f0704da}\label{structLineData_ad80505a7ef9baa083bd78ed05f0704da}} 
+\index{LineData@{LineData}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!LineData@{LineData}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}}
+{\footnotesize\ttfamily const app\+Char\& Line\+Data\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{pos }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the char at given position
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & Position of char to be returned\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Const reference to th char at given position
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em out\+\_\+of\+\_\+range} & if pos is equal to or exceeds the length of line \\
+\hline
+\end{DoxyExceptions}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structLineData_a6a7cb3638ea1096e923684e6cb8987f0}\label{structLineData_a6a7cb3638ea1096e923684e6cb8987f0}} 
+\index{LineData@{LineData}!end@{end}}
+\index{end@{end}!LineData@{LineData}}
+\doxysubsubsection{\texorpdfstring{end}{end}}
+{\footnotesize\ttfamily const app\+Char$\ast$ Line\+Data\+::end}
+
+Pointer to the end of line. Non-\/null \mbox{\Hypertarget{structLineData_adb5973414b906e1573308de60a4519cb}\label{structLineData_adb5973414b906e1573308de60a4519cb}} 
+\index{LineData@{LineData}!start@{start}}
+\index{start@{start}!LineData@{LineData}}
+\doxysubsubsection{\texorpdfstring{start}{start}}
+{\footnotesize\ttfamily const app\+Char$\ast$ Line\+Data\+::start}
+
+Pointer to the beginning of line. Non-\/null 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{poem__sorter_8h}{poem\+\_\+sorter.\+h}}\end{DoxyCompactItemize}
