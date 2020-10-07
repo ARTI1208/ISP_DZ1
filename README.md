@@ -1,6 +1,8 @@
 # ISP_DZ1 (Onegin/Hamlet sorting)
 
-Sorts text file lines by the beginning (ignoring whitespaces and punctuation marks), then by the beginning of reversed lines (with same ignoring), then writes these results in out/res.txt alongside with original text.  
+Sorts text file lines by the beginning (ignoring whitespaces and punctuation marks), then by the beginning of 
+reversed lines (with same ignoring), then writes these results in out/byStart.txt and out/byEnd.txt respectively 
+and original text goes to out/original.txt.  
 
 ## Build && run
 On linux, you can build using CMake

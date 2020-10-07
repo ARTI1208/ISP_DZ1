@@ -9,7 +9,7 @@
 #include "poem_sorter.h"
 
 static bool shouldSkipChar(const appChar& c) {
-    return isblank(c) || ispunct(c);
+    return isspace(c) || ispunct(c);
 }
 
 void sortByStart(std::vector<LineData>& data) {
@@ -41,9 +41,6 @@ void sortByStart(std::vector<LineData>& data) {
 
 void sortByEnd(std::vector<LineData>& data) {
     std::function<int(const LineData&, const LineData&)> comparator = [](const LineData& str, const LineData& other) {
-        if (str.empty()) return other.empty() ? 0 : -1;
-        if (other.empty()) return 1;
-
         ssize_t firstPos = str.length() - 1;
         for (; firstPos >= 0 && shouldSkipChar(str[firstPos]); --firstPos);
 
@@ -69,14 +66,15 @@ void sortByEnd(std::vector<LineData>& data) {
 }
 
 void fromCString(const appChar* str, size_t strLen, std::vector<LineData>& data) {
-    for (size_t i = 0, start = 0; i < strLen; ++i) {
+    size_t start = 0;
+    for (size_t i = 0; i < strLen; ++i) {
         if (str[i] == '\n') {
-
-            Line
-
             data.emplace_back(str + start, str + i);
 
             start = i + 1;
         }
+    }
+    if (start + 1 < strLen) {
+        data.emplace_back(str + start, str + strLen - 1);
     }
 }

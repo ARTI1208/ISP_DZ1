@@ -20,12 +20,12 @@ struct LineData {
     const appChar* start;
 
     /**
-     * Pointer to the end of line. Non-null
+     * Pointer to the end of line (inclusive). Non-null
      */
     const appChar* end;
 
     /*!
-     * Constructs th structure with given parameters
+     * Constructs th structure with given parameters. Line should contain at least one character
      *
      * @param start Pointer to the beginning of line
      * @param end Pointer to the end of line
@@ -39,21 +39,12 @@ struct LineData {
     }
 
     /**
-     * Returns the length of the line
+     * Returns the length of the line. Line contains at least one symbol
      *
      * @return The length of the line
      */
     [[nodiscard]] size_t length() const {
-        return end - start;
-    }
-
-    /**
-     * Returns whether this line should be treated as empty or not
-     *
-     * @return true if this line should be treated as empty, false otherwise
-     */
-    [[nodiscard]] bool empty() const {
-        return length() == 0;
+        return end - start + 1;
     }
 
     /**

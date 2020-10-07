@@ -1,7 +1,6 @@
 #include <iostream>
 #include <vector>
 #include <codecvt>
-#include <chrono>
 #include <sys/mman.h>
 #include <fcntl.h>
 #include <libnet.h>
@@ -46,32 +45,35 @@ int main(int argc, char* argv[]) {
         std::vector<LineData> lines;
         fromCString(data, fileContentSize, lines);
 
-        FILE* outFile = fopen("out/res.txt", "w");
-
-
+        FILE* byStartFile = fopen("out/byStart.txt", "w");
         sortByStart(lines);
 
-        fprintf(outFile, "===================Sorted by start\n");
+        fprintf(byStartFile, "===================Sorted by start\n");
         for (auto& line : lines) {
-            fwrite(line.start, sizeof(appChar), line.length() + 1, outFile);
+            fwrite(line.start, sizeof(appChar), line.length(), byStartFile);
         }
 
+        fclose(byStartFile);
 
+        FILE* byEndFile = fopen("out/byEnd.txt", "w");
         sortByEnd(lines);
 
-        fprintf(outFile, "===================Sorted by end\n");
+        fprintf(byEndFile, "===================Sorted by end\n");
         for (auto& line : lines) {
-            fwrite(line.start, sizeof(appChar), line.length() + 1, outFile);
+            fwrite(line.start, sizeof(appChar), line.length(), byEndFile);
         }
 
+        fclose(byEndFile);
 
-        fprintf(outFile, "===================Original\n");
-        fwrite(data, sizeof(appChar), fileContentSize, outFile);
+        FILE* originalFile = fopen("out/original.txt", "w");
+        fprintf(originalFile, "===================Original\n");
+        fwrite(data, sizeof(appChar), fileContentSize, originalFile);
 
-        fclose(outFile);
+        fclose(originalFile);
+
         munmap(data, fileContentSize);
 
-        std::cout << "Done! You can find result in out/res.txt" << "\n";
+        std::cout << "Done! You can find results in out/byStart.txt, out/byEnd.txt, out/original.txt" << "\n";
     }
 
     return 0;
