@@ -13,6 +13,8 @@ Run generated executable (filepath is optional argument)
    
     out/executable [filepath]
 
+Some files you can test on are put in assets folder - Hamlet text in english, Onegin text in russian  
+
 Run unit tests
    
     out/tests
