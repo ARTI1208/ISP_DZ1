@@ -66,6 +66,9 @@ void sortByEnd(std::vector<LineData>& data) {
 }
 
 void fromCString(const appChar* str, size_t strLen, std::vector<LineData>& data) {
+
+    if (str == nullptr) return;
+
     size_t start = 0;
     for (size_t i = 0; i < strLen; ++i) {
         if (str[i] == '\n') {
